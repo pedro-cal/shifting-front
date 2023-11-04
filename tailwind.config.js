@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { pick, omit } = require("lodash")
-const colors = require("tailwindcss/colors")
+// const { pick, omit } = require("lodash")
+// const colors = require("tailwindcss/colors")
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
@@ -49,6 +49,7 @@ module.exports = {
           "Noto Color Emoji",
         ],
         sans: [
+          "Rubik",
           "Inter",
           "ui-sans-serif",
           "system-ui",
