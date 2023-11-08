@@ -5,8 +5,8 @@ export default function Header(){
 
     return(
         <>
-            <header className="h-10 lg:h-16 2xl:h-32 bg-stone-900 flex flex-col sm:flex-row">
-                <div className="w-1/2">
+            <header className="z-20 h-10 lg:h-16 2xl:h-32 w-full bg-stone-900 flex flex-col sm:flex-row fixed">
+                <div className="w-full md:w-1/2">
                     <button className="flex flex-row items-center place-content-center">
                         <Image
                             className="w-10 lg:w-16 2xl:w-32 aspect-square border-2 border-stone-500 border-solid"
