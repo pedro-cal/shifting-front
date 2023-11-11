@@ -1,6 +1,6 @@
 import Head from "next/head"
-import Header from "components/Header/Header";
-import SectionOne from './../components/SectionOne/SectionOne';
+import Header from "components/Header/Header"
+import SectionOne from "./../components/SectionOne/SectionOne"
 
 export default function Web() {
   return (
