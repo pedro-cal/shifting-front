@@ -1,6 +1,8 @@
 import Head from "next/head"
 import Image from "next/image";
 import { useRef } from 'react';
+import Header from "components/Header/Header"
+import SectionOne from "./../components/SectionOne/SectionOne"
 
 const imgUrl = '/images/vegetables.jpg';
 
@@ -29,8 +31,13 @@ export default function Web() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <title>Next.js Enterprise Boilerplate</title>
+        <title>Shifting</title>
       </Head>
+      <section>
+        <Header />
+        <SectionOne />
+      </section>
+      <section></section>
       {/* <section className="bg-gray-900 min-h-screen text-white">Diego</section> */}
       <section className="bg-gray-800 min-h-screen text-white">
         <div
@@ -71,3 +78,5 @@ export default function Web() {
     </>
   )
 }
+
+//border-2 border-white border-solid
