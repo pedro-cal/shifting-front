@@ -4,7 +4,7 @@ import logoBeta from "/logoBeta.jpg"
 export default function Header() {
   return (
     <>
-      <header className="flex h-[10vh] flex-col bg-stone-900 p-3 px-8 sm:flex-row lg:h-[10vh]">
+      <header className="z-20 flex h-[10vh] flex-col bg-stone-900 p-3 px-8 sm:flex-row lg:h-[10vh]">
         <div className="w-1/2">
           <button className="flex h-full flex-row place-content-center items-center">
             <Image className="aspect-square h-full w-full" src={logoBeta} alt="Logo of Shifting" />
