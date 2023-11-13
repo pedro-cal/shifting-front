@@ -3,13 +3,30 @@
 @tailwind utilities;
 
 .section-background {
-   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   background: linear-gradient(to right, #516395, #614385);
-   animation: bg-change 10s infinite;
+   background: linear-gradient(40deg, #516395 8%, #614385 16%, #1f1c2c 24%, #4c495e 32%, #16222a 40%, #3a6073, 48%, #61045F 56%, #AA076B 64%, #603813 72%, #897a71 80%, #314755 89%, #228dbe 100%);
+   background-size: 600% 600%;
+   animation: bg-position 125s infinite;
+   /* background: linear-gradient(to right, #1f1c2c, #4c495e); */
+   /* background: linear-gradient(to right, #16222a, #3a6073); */
+   /* background: linear-gradient(to right, #61045F, #AA076B); */
+   /* background: linear-gradient(to right, #603813, #897a71); */
+   /* background: linear-gradient(to right, #314755, #228dbe); */
+   /* animation: bg-change 10s infinite; */
 }
 
-@keyframes bg-change {
+@keyframes bg-position {
+   0% {
+      background-position: 0% 100%;
+   }
+   50% {
+      background-position: 100% 0%;
+   }
+   100% {
+      background-position: 0% 100%;
+   }
+}
 
+@keyframes bg-filter-hue {
    0%,
    100% {
       filter: hue-rotate(0deg);
