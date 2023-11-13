@@ -17,8 +17,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
+        transparent: "transparent",
+        current: "currentColor",
         stone: {
           50: "#fafaf9",
           100: "#f5f5f4",
@@ -72,11 +72,11 @@ module.exports = {
       },
       keyframes: {
         rotate: {
-          '100%': { transform: 'rotate(360deg)' },
-        }
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
-        rotate: 'rotate 10s infinite',
+        rotate: "rotate 10s infinite",
       },
       borderWidth: {
         DEFAULT: "1px",
