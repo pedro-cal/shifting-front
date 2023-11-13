@@ -1,8 +1,8 @@
 import Head from "next/head"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
+import Form from "components/Form/Form"
 import Header from "components/Header/Header"
-import Form from "components/Form/Form";
 import SectionOne from "components/SectionOne/SectionOne"
 
 const imgUrl = "/images/vegetables.jpg"
