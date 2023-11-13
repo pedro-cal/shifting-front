@@ -1,8 +1,9 @@
 import Head from "next/head"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
+import Form from "components/Form/Form"
 import Header from "components/Header/Header"
-import SectionOne from "./../components/SectionOne/SectionOne"
+import SectionOne from "components/SectionOne/SectionOne"
 
 const imgUrl = "/images/vegetables.jpg"
 
@@ -35,6 +36,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <title>Shifting</title>
       </Head>
+
       <section>
         <Header />
       </section>
@@ -75,6 +77,9 @@ export default function Home() {
           />
           <button className="bg-blue-800 px-4 py-1 underline">Learn More</button>
         </div>
+      </section>
+      <section>
+        <Form />
       </section>
     </>
   )
