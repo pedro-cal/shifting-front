@@ -1,27 +1,26 @@
 import Head from "next/head"
-import Image from "next/image";
-import { useEffect, useRef } from 'react';
+import Image from "next/image"
+import { useEffect, useRef } from "react"
 import Header from "components/Header/Header"
 import SectionOne from "./../components/SectionOne/SectionOne"
 
-const imgUrl = '/images/vegetables.jpg';
+const imgUrl = "/images/vegetables.jpg"
 
 export default function Home() {
-  const draggableRef = useRef<HTMLDivElement>(null);
+  const draggableRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    document.onmousemove = (e) => handleOnMove(e);
+    document.onmousemove = (e) => handleOnMove(e)
     // document.ontouchmove = (e) => handleOnMove(e.touches[0]);
   }, [])
-    
-    const handleOnMove = (e: MouseEvent) => {
-      const position = e.clientX / window.innerWidth * 100;
-      
-      if (draggableRef.current) {
-        draggableRef.current.style.width = `${position}%`;
-      }
+
+  const handleOnMove = (e: MouseEvent) => {
+    const position = (e.clientX / window.innerWidth) * 100
+
+    if (draggableRef.current) {
+      draggableRef.current.style.width = `${position}%`
     }
-      
+  }
 
   return (
     <>
@@ -42,19 +41,17 @@ export default function Home() {
       <section>
         <SectionOne />
       </section>
-      <section className="bg-gray-800 min-h-screen text-white">
+      <section className="min-h-screen bg-gray-800 text-white">
         <div
           id="left-side"
-          className="absolute z-10 overflow-hidden w-full h-[100vh] grid place-items-center bg-sky-700"
+          className="absolute z-10 grid h-[100vh] w-full place-items-center overflow-hidden bg-sky-700"
           ref={draggableRef}
         >
-          <h1
-            className="font-sans my-0 mx-[15vw] w-[70vw] h-fit text-5xl font-bold tracking-tight text-clip whitespace-nowrap"
-          >
+          <h1 className="mx-[15vw] my-0 h-fit w-[70vw] text-clip whitespace-nowrap font-sans text-5xl font-bold tracking-tight">
             Which website would you prefer?
           </h1>
-          <Image src={imgUrl} alt="colorful vegetables" width={400} height={400} className="rounded"/>
-          <button className="bg-green-600 text-white px-4 py-1 rounded">Learn More</button>
+          <Image src={imgUrl} alt="colorful vegetables" width={400} height={400} className="rounded" />
+          <button className="rounded bg-green-600 px-4 py-1 text-white">Learn More</button>
           {/* <button
             id='draghandle'
             type='button'
@@ -65,17 +62,18 @@ export default function Home() {
           </button> */}
         </div>
 
-        <div
-          id="right-side"
-          className="absolute w-full h-[100vh] bg-white grid place-items-center overflow-hidden"
-        >
-          <h1
-            className="mx-[15vw] w-[70vw] h-fit font-sans text-5xl font-bold tracking-tight text-blue-800"
-          >
+        <div id="right-side" className="absolute grid h-[100vh] w-full place-items-center overflow-hidden bg-white">
+          <h1 className="mx-[15vw] h-fit w-[70vw] font-sans text-5xl font-bold tracking-tight text-blue-800">
             Which website would you prefer?
           </h1>
-          <Image src={imgUrl} alt="colorful vegetables" width={400} height={400} className="border-6 border-red-800 shadow-xl shadow-red-800"/>
-          <button className="bg-blue-800 underline px-4 py-1">Learn More</button>
+          <Image
+            src={imgUrl}
+            alt="colorful vegetables"
+            width={400}
+            height={400}
+            className="border-6 border-red-800 shadow-xl shadow-red-800"
+          />
+          <button className="bg-blue-800 px-4 py-1 underline">Learn More</button>
         </div>
       </section>
     </>
