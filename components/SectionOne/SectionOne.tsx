@@ -1,21 +1,23 @@
 import Image from 'next/image'
 import constructionPhoto from "/constructionPhoto.jpg"
-import { useState } from 'react'
+import { useEffect, useState, } from 'react'
 
 export default function SectionOne(){
     const [mouseX, setMouseX] = useState(0);
     const [mouseY, setMouseY] = useState(0);
-    const blur = document.getElementById("blur");
     
     function mouseBlur(e){
         setMouseX(e.clientX);
-        setMouseY(e.clientY);
+        setMouseY(e.clientY);        
+    }
+
+    useEffect(() => {
+        const blur = document.getElementById("blur");
         blur.animate({
             left: `${mouseX}px`,
             top: `${mouseY}px`,
         }, {duration: 2000, fill: "forwards"});
-        
-    }
+    }, [mouseX, mouseY]);
     
     return(
         <>

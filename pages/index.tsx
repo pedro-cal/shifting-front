@@ -1,6 +1,7 @@
 import Head from "next/head"
 import SectionOne from './../components/SectionOne/SectionOne';
 import Header from "components/Header/Header";
+import Form from "components/Form/Form";
 
 
 
@@ -18,11 +19,14 @@ export default function Web() {
         <meta name="twitter:card" content="summary_large_image" />
         <title>Shifting</title>
       </Head>
+      <Header />
       <section>
-        <Header />
         <SectionOne />
       </section>
       <section></section>
+      <section>
+        <Form />
+      </section>
     </>
   )
 }
