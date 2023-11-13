@@ -1,8 +1,27 @@
 import Head from "next/head"
+import Image from "next/image"
+import { useEffect, useRef } from "react"
 import Header from "components/Header/Header"
 import SectionOne from "./../components/SectionOne/SectionOne"
 
-export default function Web() {
+const imgUrl = "/images/vegetables.jpg"
+
+export default function Home() {
+  const draggableRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    document.onmousemove = (e) => handleOnMove(e)
+    // document.ontouchmove = (e) => handleOnMove(e.touches[0]);
+  }, [])
+
+  const handleOnMove = (e: MouseEvent) => {
+    const position = (e.clientX / window.innerWidth) * 100
+
+    if (draggableRef.current) {
+      draggableRef.current.style.width = `${position}%`
+    }
+  }
+
   return (
     <>
       <Head>
@@ -18,9 +37,45 @@ export default function Web() {
       </Head>
       <section>
         <Header />
+      </section>
+      <section>
         <SectionOne />
       </section>
-      <section></section>
+      <section className="min-h-screen bg-gray-800 text-white">
+        <div
+          id="left-side"
+          className="absolute z-10 grid h-[100vh] w-full place-items-center overflow-hidden bg-sky-700"
+          ref={draggableRef}
+        >
+          <h1 className="mx-[15vw] my-0 h-fit w-[70vw] text-clip whitespace-nowrap font-sans text-5xl font-bold tracking-tight">
+            Which website would you prefer?
+          </h1>
+          <Image src={imgUrl} alt="colorful vegetables" width={400} height={400} className="rounded" />
+          <button className="rounded bg-green-600 px-4 py-1 text-white">Learn More</button>
+          {/* <button
+            id='draghandle'
+            type='button'
+            onMouseDown={handler}
+            className='absolute z-20 -right-4 bottom-1/2 bg-sky-900 text-white border-0 rounded-full h-8 w-8 hover:scale-110 active:scale-100 active:border-0 transition ease-in-out'
+          >
+            {'<>'}
+          </button> */}
+        </div>
+
+        <div id="right-side" className="absolute grid h-[100vh] w-full place-items-center overflow-hidden bg-white">
+          <h1 className="mx-[15vw] h-fit w-[70vw] font-sans text-5xl font-bold tracking-tight text-blue-800">
+            Which website would you prefer?
+          </h1>
+          <Image
+            src={imgUrl}
+            alt="colorful vegetables"
+            width={400}
+            height={400}
+            className="border-6 border-red-800 shadow-xl shadow-red-800"
+          />
+          <button className="bg-blue-800 px-4 py-1 underline">Learn More</button>
+        </div>
+      </section>
     </>
   )
 }
