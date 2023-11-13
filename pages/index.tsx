@@ -1,13 +1,18 @@
 import Head from "next/head"
 import Image from "next/image";
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Header from "components/Header/Header"
 import SectionOne from "./../components/SectionOne/SectionOne"
 
 const imgUrl = '/images/vegetables.jpg';
 
-export default function Web() {
+export default function Home() {
   const draggableRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.onmousemove = (e) => handleOnMove(e);
+    // document.ontouchmove = (e) => handleOnMove(e.touches[0]);
+  }, [])
     
     const handleOnMove = (e: MouseEvent) => {
       const position = e.clientX / window.innerWidth * 100;
@@ -17,8 +22,6 @@ export default function Web() {
       }
     }
       
-    document.onmousemove = (e) => handleOnMove(e);
-    // document.ontouchmove = (e) => handleOnMove(e.touches[0]);
 
   return (
     <>
@@ -35,14 +38,14 @@ export default function Web() {
       </Head>
       <section>
         <Header />
+      </section>
+      <section>
         <SectionOne />
       </section>
-      <section></section>
-      {/* <section className="bg-gray-900 min-h-screen text-white">Diego</section> */}
       <section className="bg-gray-800 min-h-screen text-white">
         <div
           id="left-side"
-          className="absolute z-10 overflow-hidden w-full h-[100vh] grid place-items-center bg-gray-800"
+          className="absolute z-10 overflow-hidden w-full h-[100vh] grid place-items-center bg-sky-700"
           ref={draggableRef}
         >
           <h1
