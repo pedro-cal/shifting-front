@@ -2,7 +2,6 @@
 const fs = require("fs")
 
 module.exports = {
-  plugins: ["prettier"],
   extends: [
     "next",
     "prettier",
