@@ -8,10 +8,10 @@ import SectionOne from "components/SectionOne/SectionOne"
 const imgUrl = "/images/vegetables.jpg"
 
 export default function Home() {
-  const draggableRef = useRef<HTMLDivElement>(null);
+  const draggableRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    document.onmousemove = (e) => handleOnMove(e);
+    document.onmousemove = (e) => handleOnMove(e)
     // document.ontouchmove = (e) => handleOnMove(e.touches[0]);
   }, [])
 
