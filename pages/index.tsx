@@ -43,7 +43,8 @@ export default function Home() {
       <section>
         <SectionOne />
       </section>
-      <section className="min-h-screen bg-gray-800 text-white">
+
+      {/* <section className="section-background min-h-screen bg-gray-800 text-white">
         <div
           id="left-side"
           className="absolute z-10 grid h-[100vh] w-full place-items-center overflow-hidden bg-sky-700"
@@ -54,14 +55,6 @@ export default function Home() {
           </h1>
           <Image src={imgUrl} alt="colorful vegetables" width={400} height={400} className="rounded" />
           <button className="rounded bg-green-600 px-4 py-1 text-white">Learn More</button>
-          {/* <button
-            id='draghandle'
-            type='button'
-            onMouseDown={handler}
-            className='absolute z-20 -right-4 bottom-1/2 bg-sky-900 text-white border-0 rounded-full h-8 w-8 hover:scale-110 active:scale-100 active:border-0 transition ease-in-out'
-          >
-            {'<>'}
-          </button> */}
         </div>
 
         <div id="right-side" className="absolute grid h-[100vh] w-full place-items-center overflow-hidden bg-white">
@@ -77,12 +70,10 @@ export default function Home() {
           />
           <button className="bg-blue-800 px-4 py-1 underline">Learn More</button>
         </div>
-      </section>
+      </section> */}
       <section>
         <Form />
       </section>
     </>
   )
 }
-
-//border-2 border-white border-solid
