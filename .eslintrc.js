@@ -2,6 +2,9 @@
 const fs = require("fs")
 
 module.exports = {
+  plugins: [
+    "prettier",
+  ],
   extends: [
     "next",
     "prettier",
@@ -34,6 +37,12 @@ module.exports = {
       },
     ],
     "tailwindcss/classnames-order": "off",
+    "tailwindcss/no-custom-classname": [
+      "warn",
+      {
+        whitelist: ["fx-background-change", "fx-blob-wrapper", "fx-blob-ball"],
+      },
+    ],
     "import/order": [
       1,
       {

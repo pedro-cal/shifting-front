@@ -44,7 +44,7 @@ export default function Home() {
         <SectionOne />
       </section>
 
-      <section className="section-background min-h-screen bg-gray-800 text-white">
+      {/* <section className="section-background min-h-screen bg-gray-800 text-white">
         <div
           id="left-side"
           className="absolute z-10 grid h-[100vh] w-full place-items-center overflow-hidden bg-sky-700"
@@ -70,7 +70,7 @@ export default function Home() {
           />
           <button className="bg-blue-800 px-4 py-1 underline">Learn More</button>
         </div>
-      </section>
+      </section> */}
       <section>
         <Form />
       </section>

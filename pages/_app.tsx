@@ -1,4 +1,5 @@
 import "../styles/tailwind.css"
+import "../styles/fx.scss"
 
 import { AppProps } from "next/app"
 
