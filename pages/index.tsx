@@ -1,7 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
-import Form from "components/Form/Form"
+import ContactForm from "components/Form/ContactForm"
 import Header from "components/Header/Header"
 import SectionOne from "components/SectionOne/SectionOne"
 
@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </section> */}
       <section>
-        <Form />
+        <ContactForm />
       </section>
     </>
   )
