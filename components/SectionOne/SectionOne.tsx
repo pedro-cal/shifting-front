@@ -1,7 +1,7 @@
 // import Image from "next/image"
 // import constructionPhoto from "/constructionPhoto.jpg"
-import BlobShape from "components/BlobShape"
 import { useEffect, useState } from "react"
+// import BlobShape from "components/BlobShape"
 
 export default function SectionOne() {
   const [mouseX, setMouseX] = useState(0)
@@ -27,7 +27,6 @@ export default function SectionOne() {
       <section
         onMouseMove={(e) => mouseBlur(e)}
         className="fx-background-change flex h-[100vh] flex-col overflow-hidden pt-2 md:flex-row md:p-0"
-        // className="flex h-[90vh] flex-col overflow-hidden bg-stone-950 pt-2 md:flex-row md:p-0"
       >
         <div id="blur" className="fx-blur-cursor absolute -top-5 left-5 z-0 flex aspect-square" />
         <div className="relative z-10 flex h-1/3 place-content-center items-center pt-3 md:h-full md:w-1/2 md:p-0">
@@ -37,10 +36,7 @@ export default function SectionOne() {
             <br /> could move us?
           </p>
         </div>
-        <div className="z-10 flex h-full w-1/2 place-content-center items-center">
-          {/* <div className="fx-blur-cursor"></div> */}
-          {/* <Image className="w-2/3 rounded" src={constructionPhoto} alt="Photo of a construction in New York" /> */}
-        </div>
+        <div className="z-10 flex h-full w-1/2 place-content-center items-center"></div>
       </section>
     </>
   )
