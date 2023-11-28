@@ -37,7 +37,14 @@ module.exports = {
     "tailwindcss/no-custom-classname": [
       "warn",
       {
-        whitelist: ["fx-background-change", "fx-blob-wrapper", "fx-blob-ball"],
+        whitelist: [
+          "fx-background-change",
+          "fx-blob-wrapper",
+          "fx-blob-ball",
+          "fx-blur-cursor",
+          "fx-floating",
+          "section-background",
+        ],
       },
     ],
     "import/order": [
