@@ -48,7 +48,7 @@
     "@t3-oss/env-nextjs": "^0.6.0",
     "@vercel/otel": "^0.3.0",
     "class-variance-authority": "^0.7.0",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^10.16.5",
     "google-libphonenumber": "^3.2.33",
     "lodash": "^4.17.21",
     "next": "^13.3.0",

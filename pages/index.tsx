@@ -1,9 +1,11 @@
+import { motion } from 'framer-motion'
 import Head from "next/head"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
 import ContactForm from "components/Form/ContactForm"
 import Header from "components/Header/Header"
 import SectionOne from "components/SectionOne/SectionOne"
+
 
 const imgUrl = "/images/vegetables.jpg"
 
@@ -44,7 +46,12 @@ export default function Home() {
         <SectionOne />
       </section>
 
-      <section className="section-background min-h-screen bg-gray-800 text-white">
+      <motion.section 
+        className="section-background min-h-screen bg-gray-800 text-white"
+        initial={{x: -1000}}
+        whileInView={{x: 0}}
+        transition={{duration: 1.25}}
+        >
         <div
           id="left-side"
           className="absolute z-10 grid h-[100vh] w-full place-items-center overflow-hidden bg-zinc-800"
@@ -70,9 +77,15 @@ export default function Home() {
           />
           <button className="bg-blue-800 px-4 py-1 underline">Learn More</button>
         </div>
-      </section>
-      <section>
-        <ContactForm />
+      </motion.section>
+      <section className='bg-stone-950'>
+        <motion.div
+          initial={{x: 1000}}
+          whileInView={{x: 0}}
+          transition={{duration: 1.25}}
+        >
+          <ContactForm />
+        </motion.div>
       </section>
     </>
   )
