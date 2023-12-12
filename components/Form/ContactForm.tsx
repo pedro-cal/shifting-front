@@ -1,4 +1,5 @@
 import * as Form from '@radix-ui/react-form'
+import { motion } from 'framer-motion'
 import { useEffect, useState } from "react"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -107,9 +108,13 @@ export default function ContactForm() {
 
   return (
     <>
-      <section className="flex h-screen w-screen overflow-hidden flex-col content-center items-center bg-stone-950 md:flex-row-reverse">
+      <motion.section 
+      initial={{x: 200}}
+      whileInView={{x: 0}}
+      transition={{duration: 1.25}}
+      className="flex h-screen w-screen overflow-hidden flex-col content-center items-center bg-stone-950 md:flex-row-reverse">
         <div className="my-8 flex items-center justify-center md:w-1/2">
-          <p className="flex w-3/4 text-center text-xl text-stone-50 md:w-1/2 md:text-2xl lg:text-3xl">
+          <p className="mt-[20%] md:mt-0 flex w-3/4 text-center text-xl text-stone-50 md:w-1/2 md:text-2xl lg:text-3xl">
             Do you want a personalized solution for your business? Fill out our form now and our team will contact you.
           </p>
         </div>
@@ -229,7 +234,7 @@ export default function ContactForm() {
             </div>
           ):null}
         </div>
-      </section>
+      </motion.section>
     </>
   )
 }
