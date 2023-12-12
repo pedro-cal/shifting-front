@@ -26,14 +26,18 @@ export default function SectionOne() {
     <>
       <section
         onMouseMove={(e) => mouseBlur(e)}
-        className="fx-background-change flex h-[100vh] flex-col overflow-hidden pt-2 md:flex-row md:p-0"
+        className="fx-background-change flex h-[100vh] w-[100vw] flex-col overflow-hidden pt-2 md:flex-row md:p-0"
       >
-        <div id="blur" className="fx-blur-cursor absolute -top-5 left-5 z-0 flex aspect-square" />
+        <div id="blur" className="fx-blur-cursor absolute hidden md:-top-5 md:left-5 z-0 lg:flex aspect-square" />
         <div className="relative z-10 flex h-1/3 place-content-center items-center pt-3 md:h-full md:w-1/2 md:p-0">
-          <p className="fx-floating h-1/2 w-3/4 text-center font-sans text-2xl font-black text-stone-100 md:h-fit md:pl-20 md:text-left md:text-4xl lg:text-5xl">
-            What if <br />
-            your <span className="text-sky-500">intentions</span>
-            <br /> could move us?
+          <p className="fx-floating h-1/2 w-full md:w-3/4 text-5xl md:text-5xl text-center font-sans font-black text-stone-100 md:h-fit md:pl-20 md:text-left mt-[25%] md:mt-auto">
+            <span className="block md:hidden">What if your</span>
+            <span className="hidden md:block">What if</span>
+            {/* <br className="hidden md:block"/> */}
+            <span className="hidden md:block">your</span>
+            <span className="text-sky-500 text-6xl md:text-5xl">intentions</span>
+            <br />
+            <span className="text-4xl md:text-5xl">could move us?</span>
           </p>
         </div>
         <div className="z-10 flex h-full w-1/2 place-content-center items-center"></div>
@@ -41,3 +45,5 @@ export default function SectionOne() {
     </>
   )
 }
+
+//border-solid border-2 border-orange-400 
