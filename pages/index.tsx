@@ -6,7 +6,6 @@ import SectionOne from "components/SectionOne/SectionOne"
 import SectionTwo from "components/SectionTwo/SectionTwo"
 
 export default function Home() {
-  
 
   return (
     <>
@@ -20,6 +19,7 @@ export default function Home() {
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <title>Shifting</title>
+        <script type="text/javascript" async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SLfmGf"></script>
       </Head>
       <section>
         <Header />

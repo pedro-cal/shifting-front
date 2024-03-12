@@ -34,9 +34,10 @@ export default function ContactForm() {
   const [patternIsValid, setPatternIsValid] = useState(true)
   const [buttonIsDisabled, setButtonIsDisabled] = useState(false)
   const [successMessage, setSuccessMessage] = useState(false)
+  //const [formSubmitted, setFormSubmitted] = useState(false)
 
   function handleSubmit() {
-
+    console.log(phoneNumber)
     if(firstName === ''){
       setFirstNameIsValid(false)
       setButtonIsDisabled(true)
@@ -70,7 +71,6 @@ export default function ContactForm() {
     }
 
     if(firstNameIsValid && lastNameIsValid && patternIsValid && phoneNumberLengthIsValid){
-
       const addNewContact = {
         firstName: firstName,
         lastName: lastName,
@@ -88,6 +88,60 @@ export default function ContactForm() {
       setLastNameIsValid(false)
       setPatternIsValid(false)
       setPhoneNumberLengthIsValid(false)
+
+      //Sending Form data through Klaivyo API:
+      const http = require('https');
+
+      const options = {
+        method: 'POST',
+        hostname: 'a.klaviyo.com',
+        port: null,
+        path: '/client/subscriptions/?company_id=SLfmGf',
+        headers: {
+          revision: '2024-02-15',
+          'content-type': 'application/json'
+        }
+      };
+
+      const req = http.request(options, function (res:any) {
+        const chunks:any = [];
+
+        res.on('data', function (chunk:any) {
+          chunks.push(chunk);
+        });
+
+        res.on('end', function () {
+          const body = Buffer.concat(chunks);
+          console.log(body.toString());
+        });
+      });
+
+      req.write(JSON.stringify({
+        data: {
+          type: 'subscription',
+          attributes: {
+            custom_source: 'Homepage footer signup form',
+            profile: {
+              data: {
+                type: 'profile',
+                attributes: {
+                  first_name: firstName,
+                  last_name: lastName,
+                  email: email,
+                  phone_number: '+' + phoneNumber,
+                  properties: {newKey: 'New Value'}
+                },
+                meta: {
+                  patch_properties: {append: {newKey: 'New Value'}, unappend: {newKey: 'New Value'}, unset: 'skus'}
+                }
+              }
+            }
+          },
+          relationships: {list: {data: {type: 'list', id: 'SsmFwf'}}}
+        }
+      }));
+      req.end();
+
     }else{setButtonIsDisabled(true)}
 
   }
@@ -105,6 +159,10 @@ export default function ContactForm() {
 
   // console.log("ContactList: ")
   // console.log(contactList)
+
+  
+    
+
 
   return (
     <>

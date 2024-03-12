@@ -241,6 +241,7 @@ export default function SectionOne() {
 
   const revealSection = (e:React.MouseEvent) => {
     if(mouseIsDown){
+      klaviyo.push(['track', 'Reveal Event']);
       const a = (window.innerWidth/2) - e.currentTarget.clientWidth
       const xPosition = e.clientX - ((window.innerWidth/2) + (a/2))
       setPosition(`${xPosition}px`)
@@ -416,7 +417,7 @@ export default function SectionOne() {
             <span className="hidden md:block">your</span>
             <span className="text-sky-500 text-6xl md:text-5xl">intentions</span>
             <br />
-            <span className="text-4xl md:text-5xl">could move us?</span>
+            <span className="text-4xl md:text-5xl">could move us? </span>
           </p>
         </motion.div>
         <motion.div
@@ -433,7 +434,7 @@ export default function SectionOne() {
             onMouseMove={revealSection}
             onMouseLeave={mouseUp}
             onTouchMove={touchRevealSection} 
-            className="bg-stone-800 md:hidden relative w-full md:w-[80%] md:w-[75%] lg:w-[50%] pt-[10%] aspect-square flex flex-col content-center place-content-center items-center border-solid border-2 border-white overflow-hidden"
+            className="bg-transparent md:bg-stone-800 md:hidden relative w-full md:w-[80%] md:w-[75%] lg:w-[50%] pt-[10%] aspect-square flex flex-col content-center place-content-center items-center border-none md:border-solid border-2 border-white overflow-hidden"
           >
             <p className="absolute top-[15%] md:top-[10%] text-white text-center text-2xl md:text-[2.5vw] lg:text-[1.5vw] w-[90%] select-none">
               Drag the button to the left to REVEAL the Hidden Section.
@@ -483,7 +484,7 @@ export default function SectionOne() {
             onMouseMove={hideSection}
             onMouseLeave={mouseUp}
             onTouchMove={touchHideSection}  
-            className="bg-stone-800 md:hidden relative w-full md:w-[80%] md:w-[75%] lg:w-[50%] pt-[10%] aspect-square flex flex-col content-center place-content-center items-center border-solid border-2 border-white overflow-hidden"
+            className="bg-transparent md:bg-stone-800 md:hidden relative w-full md:w-[80%] md:w-[75%] lg:w-[50%] pt-[10%] aspect-square flex flex-col content-center place-content-center items-center border-none md:border-solid border-2 border-white overflow-hidden"
           >
             <p className="absolute top-[15%] md:top-[10%] text-white text-center text-2xl md:text-[2.5vw] lg:text-[1.5vw] w-[90%] select-none">
               Drag the button to the right to HIDE the Text Section.
